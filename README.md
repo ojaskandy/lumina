@@ -1,12 +1,12 @@
 # Voice Navigation System
 
-A Python script that listens for keyboard input, records speech, converts it to text, and matches keywords with YOLO object classes for navigation commands.
+A Python script that listens for keyboard input, records speech, converts it to text, and matches keywords with MobileNet object classes for navigation commands.
 
 ## Features
 
 - 🎮 Press 'm' key to activate voice recognition
 - 🎤 Records speech and converts to text using Google Speech Recognition
-- 🔍 Extracts keywords from speech and matches them to YOLO classes
+- 🔍 Extracts keywords from speech and matches them to MobileNet classes
 - ✅ Provides acknowledgment when objects are detected
 - 🔄 Supports fuzzy matching for similar words
 
@@ -59,12 +59,12 @@ python voice_navigation.py
 2. **Speech Recording**: Activates microphone and records speech (5-second timeout)
 3. **Speech-to-Text**: Converts audio to text using Google's speech recognition
 4. **Keyword Extraction**: Removes navigation words and extracts object keywords
-5. **YOLO Matching**: Matches keywords to YOLO class names (with fuzzy matching)
+5. **MobileNet Matching**: Matches keywords to MobileNet class names (with fuzzy matching)
 6. **Acknowledgment**: Provides feedback when objects are detected
 
-## YOLO Classes Supported
+## MobileNet Classes Supported
 
-The script recognizes all 80 YOLO classes including:
+The script currently recognizes 80 MobileNet classes including:
 - People and animals (person, cat, dog, horse, etc.)
 - Vehicles (car, bicycle, motorcycle, bus, etc.)
 - Furniture (chair, couch, bed, dining table, etc.)

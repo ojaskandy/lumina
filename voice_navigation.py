@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Voice Navigation Script
-Listens for 'm' key press, records speech, and matches keywords to YOLO classes.
+Listens for 'm' key press, records speech, and matches keywords to MobileNet classes.
 """
 
 import speech_recognition as sr
@@ -12,25 +12,25 @@ import time
 import re
 from difflib import get_close_matches
 
-# YOLO class list
-YOLO_CLASSES = {
+# MobileNet class list
+MOBILENET_CLASSES = {
     "0": "person", "1": "bicycle", "2": "car", "3": "motorcycle", "4": "airplane",
     "5": "bus", "6": "train", "7": "truck", "8": "boat", "9": "traffic light",
-    "10": "fire hydrant", "11": "stop sign", "12": "parking meter", "13": "bench",
-    "14": "bird", "15": "cat", "16": "dog", "17": "horse", "18": "sheep",
-    "19": "cow", "20": "elephant", "21": "bear", "22": "zebra", "23": "giraffe",
-    "24": "backpack", "25": "umbrella", "26": "handbag", "27": "tie", "28": "suitcase",
-    "29": "frisbee", "30": "skis", "31": "snowboard", "32": "sports ball", "33": "kite",
-    "34": "baseball bat", "35": "baseball glove", "36": "skateboard", "37": "surfboard",
-    "38": "tennis racket", "39": "bottle", "40": "wine glass", "41": "cup", "42": "fork",
-    "43": "knife", "44": "spoon", "45": "bowl", "46": "banana", "47": "apple",
-    "48": "sandwich", "49": "orange", "50": "brocolli", "51": "carrot", "52": "hot dog",
-    "53": "pizza", "54": "donut", "55": "cake", "56": "chair", "57": "couch",
-    "58": "potted plant", "59": "bed", "60": "dining table", "61": "toilet", "62": "tv",
-    "63": "laptop", "64": "mouse", "65": "remote", "66": "keyboard", "67": "cell phone",
-    "68": "microwave", "69": "oven", "70": "toaster", "71": "sink", "72": "refrigerator",
-    "73": "book", "74": "clock", "75": "vase", "76": "scissors", "77": "teddy bear",
-    "78": "hair drier", "79": "toothbrush"
+    "10": "fire hydrant", "12": "stop sign", "13": "parking meter", "14": "bench",
+    "15": "bird", "16": "cat", "17": "dog", "18": "horse", "19": "sheep",
+    "20": "cow", "21": "elephant", "22": "bear", "23": "zebra", "24": "giraffe",
+    "26": "backpack", "27": "umbrella", "30": "handbag", "31": "tie", "32": "suitcase",
+    "33": "frisbee", "34": "skis", "35": "snowboard", "36": "sports ball", "37": "kite",
+    "38": "baseball bat", "39": "baseball glove", "40": "skateboard", "41": "surfboard",
+    "42": "tennis racket", "43": "bottle", "45": "wine glass", "46": "cup", "47": "fork",
+    "48": "knife", "49": "spoon", "50": "bowl", "51": "banana", "52": "apple",
+    "53": "sandwich", "54": "orange", "55": "broccoli", "56": "carrot", "57": "hot dog",
+    "58": "pizza", "59": "donut", "60": "cake", "61": "chair", "62": "couch",
+    "63": "potted plant", "64": "bed", "66": "dining table", "69": "toilet", "71": "tv",
+    "72": "laptop", "73": "mouse", "74": "remote", "75": "keyboard", "76": "cell phone",
+    "77": "microwave", "78": "oven", "79": "toaster", "80": "sink", "81": "refrigerator",
+    "83": "book", "84": "clock", "85": "vase", "86": "scissors", "87": "teddy bear",
+    "88": "hair drier", "89": "toothbrush"
 }
 
 class VoiceNavigator:
@@ -38,7 +38,7 @@ class VoiceNavigator:
         self.recognizer = sr.Recognizer()
         self.microphone = sr.Microphone()
         self.is_listening = False
-        self.class_names = list(YOLO_CLASSES.values())
+        self.class_names = list(MOBILENET_CLASSES.values())
         
         # Adjust for ambient noise
         print("Adjusting for ambient noise... Please wait.")
@@ -86,8 +86,8 @@ class VoiceNavigator:
         
         return keywords
     
-    def find_yolo_matches(self, keywords):
-        """Find matching YOLO classes from keywords"""
+    def find_mobilenet_matches(self, keywords):
+        """Find matching MobileNet classes from keywords"""
         matches = []
         
         for keyword in keywords:
@@ -118,8 +118,8 @@ class VoiceNavigator:
                 keywords = self.extract_keywords(text)
                 print(f"🔍 Extracted keywords: {keywords}")
                 
-                # Find YOLO matches
-                matches = self.find_yolo_matches(keywords)
+                # Find MobileNet matches
+                matches = self.find_mobilenet_matches(keywords)
                 
                 if matches:
                     for match in matches:
@@ -153,7 +153,7 @@ class VoiceNavigator:
     def start(self):
         """Start the voice navigation system"""
         print("🚀 Voice Navigation System Started")
-        print("📋 Available YOLO classes:", ", ".join(sorted(self.class_names)))
+        print("📋 Available MobileNet classes:", ", ".join(sorted(self.class_names)))
         print("\nControls:")
         print("  Press 'm' - Activate voice navigation")
         print("  Press 'q' - Quit application")
