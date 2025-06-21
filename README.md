@@ -111,4 +111,4 @@ Setup complete. Press 'm' to start voice navigation, 'q' to quit.
 
 - `speechrecognition`: For speech-to-text conversion
 - `pyaudio`: For microphone access
-- `pynput`: For keyboard input detection 
+- `pynput`: For keyboard input detection
