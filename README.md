@@ -2,6 +2,8 @@
 
 Camera-based AI-powered smart compass that aids visually impaired individuals
 
+[Devpost Submission](https://devpost.com/software/visionpro-vqmho7)
+
 ## Overview
 
 Lumina is an innovative assistive technology project that combines computer vision, AI, and hardware components to help visually impaired individuals navigate and understand their surroundings. The system uses a Raspberry Pi with camera capabilities, AI-powered object detection, and tactile feedback to provide real-time assistance.
